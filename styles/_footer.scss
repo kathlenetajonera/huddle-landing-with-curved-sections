@@ -1,0 +1,207 @@
+.footer {
+    padding: 4rem 1.5rem;
+    background-color: $veryDarkCyan;
+    position: relative;
+
+    &::before {
+        content: "";
+        background-image: url("/images/bg-footer-top-mobile.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+    }
+
+    @include mediaQuery(tablet) {
+        &::before {
+            background-image: url("/images/bg-footer-top-desktop.svg");
+        }
+
+        padding: 4rem 3rem;
+    }
+
+    @include mediaQuery(desktop) {
+        &::before {
+            height: 140px;
+        }
+
+        padding: 4rem 6rem;
+    }
+
+    .grid-two-col {
+        @include mediaQuery(tablet) {
+            align-items: start;
+        }
+
+        .company-details {
+            order: 1;
+
+            @include mediaQuery(tablet) {
+                order: 0;
+                width: 310px;
+            }
+
+            .footer-logo {
+                display: inline-block;
+                width: 180px;
+                margin-bottom: 1rem;
+
+                img {
+                    filter: brightness(0) invert(1);
+                    max-width: 100%;
+                }
+            }
+
+            p {
+                color: $white;
+
+                @include mediaQuery(tablet) {
+                    font-size: .9rem;
+                }
+            }
+
+            .contact {
+                margin: 2rem 0;
+
+                p:first-child {
+                    margin-bottom: 1rem;
+                }
+
+                span {
+                    margin-right: 1rem;
+
+                    svg {
+                        width: 20px;
+                    }
+                }
+            }
+
+            .social-media {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                @include mediaQuery(tablet) {
+                    margin-top: 4rem;
+                }
+
+                .socmed {
+                    margin-right: .8rem;
+
+                    a {
+                        display: block;
+
+                        i {
+                            color: $white;
+                            font-size: 1.5rem;
+                            display: block;
+                        }
+
+                        &:hover {
+                            i {
+                                color: #04c0e9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .newsletter {
+            h2 {
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+
+            p {
+                color: $white;
+                margin: 1rem 0 2rem;
+
+                @include mediaQuery(tablet) {
+                    font-size: .9rem;
+                }
+
+                @include mediaQuery(desktop) {
+                    width: 60%;
+                }
+            }
+
+            .form {
+                display: grid;
+                align-items: end;
+                grid-gap: 1rem;
+
+                @include mediaQuery(desktop) {
+                    grid-template-columns: 2fr 1fr;
+                }
+
+                .field {
+                    width: 100%;
+                    position: relative;
+
+                    input {
+                        width: 100%;
+                        padding: 1rem;
+                        border-radius: .5rem;
+                        font-family: $body-font;
+
+                        &.error {
+                            border: 1px solid $lightRed;
+                        }
+
+                        &.valid {
+                            border: 1px solid $green;
+                        }
+                    }
+
+                    p {
+                        display: none;
+
+                        @include mediaQuery(desktop) {
+                            position: absolute;
+                        }
+
+                        &.error {
+                            display: block;
+                            margin: .5rem 0 0 1rem;
+                            color: $lightRed;
+                            font-weight: 700;
+                            font-size: .8rem;
+                        }
+
+                        &.valid {
+                            @extend .error;
+                            color: $green;
+                        }
+                    }
+                }
+
+                .primary-btn {
+                    border-radius: 6px;
+                    padding: 1rem;
+                    width: 50%;
+                    margin-left: auto;
+                    box-shadow: none;
+
+                    @include mediaQuery(desktop) {
+                        width: auto;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem 0;
+
+    a { color: hsl(228, 45%, 44%); }
+}

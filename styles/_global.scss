@@ -1,0 +1,47 @@
+h1, h2 {
+    color: $veryDarkCyan;
+    font-family: $heading-font;
+    cursor: default;
+}
+
+p {
+    color: $bodyText;
+    font-family: $body-font;
+    cursor: default;
+}
+
+a {
+    font-family: $body-font;
+}
+
+.primary-btn {
+    display: inline-block;
+    background-color: $pink;
+    color: $white;
+    font-weight: 700;
+    padding: .6rem 2rem;
+    border-radius: 2rem;
+    font-size: .8rem;
+    box-shadow: 0 5px 8px 0 #cfddde;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ff8ed6;
+    }
+
+    @include mediaQuery(tablet) {
+        padding: 1rem 2rem;
+        width: 280px;
+        font-size: .9rem;
+    }
+}
+
+.grid-two-col {
+    display: grid;
+    grid-gap: 4rem;
+
+    @include mediaQuery(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}

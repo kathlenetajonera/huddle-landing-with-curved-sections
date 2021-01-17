@@ -1,0 +1,70 @@
+.hero {
+    padding: 2rem;
+
+    @include mediaQuery(tablet) {
+        padding: 3rem;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            flex-basis: Min(35%, 180px);
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
+
+        .secondary-btn {
+            color: $pink;
+            padding: .2rem 1rem;
+            border: 1px solid $pink;
+            border-radius: 2rem;
+            font-size: .8rem;
+
+            &:hover {
+                opacity: .5;
+            }
+
+            @include mediaQuery(tablet) {
+                padding: .4rem 1.5rem;
+            }
+        }
+    }
+
+    .hero-container {
+        display: grid;
+        grid-gap: 5rem;
+        margin: 6rem auto 0;
+        width: Min(867px, 100%);
+
+        @include mediaQuery(desktop) {
+            margin-top: 10rem;
+        }
+
+        .text {
+            text-align: center;
+
+            h1 {
+                @include mediaQuery(tablet) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            p {
+                margin: 2rem auto;
+                width: Min(500px, 100%);
+            }
+        }
+
+        .image {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}

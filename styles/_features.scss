@@ -1,0 +1,204 @@
+.features {
+    .data {
+        padding: 0 2rem;
+    
+        .grid-two-col {
+            margin: 5rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            @include mediaQuery(desktop) {
+                margin: 5rem 0 10rem;
+            }
+
+            .text {
+                text-align: center;
+    
+                h1 {
+                    font-size: 4rem;
+                    font-weight: 600;
+                    position: relative;
+
+                    @include mediaQuery(desktop) {
+                        font-size: 5rem;
+                    }
+
+                    img {
+                        width: Min(48px, 10%);
+                        position: absolute;
+                        top: 0;
+                        transform: translateY(-100%);
+                    }
+                }
+
+                .communities {
+                    letter-spacing: 6px;
+
+                    @include mediaQuery(desktop) {
+                        letter-spacing: normal;
+                    }
+                }
+    
+                p {
+                    color: #a9abac;
+                    margin: 0 0 1rem;
+                    width: 100%;
+
+                    @include mediaQuery(desktop) {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .grid-two-col {
+        padding: 3rem 2rem;
+        margin: 10rem 0;
+
+        @include mediaQuery(tablet) {
+            padding: 3rem;
+        }
+
+        @include mediaQuery(desktop) {
+            padding: 3rem 6rem;
+            grid-gap: 6rem;
+        }
+
+        .text {
+            text-align: center;
+            order: 1;
+
+            @include mediaQuery(tablet) {
+                text-align: left;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+
+                @include mediaQuery(tablet) {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                margin: 1rem 0;
+
+                @include mediaQuery(tablet) {
+                    width: Min(479px, 100%);
+                }
+            }
+        }
+    
+        .image {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    div[class*='curved-div'] {
+        background-color: $veryPaleBlue;
+        position: relative;
+        margin: 0;
+
+        @include mediaQuery(tablet) {
+            .text {
+                order: 0;
+            }
+        }
+    }
+
+    div[class*='curved-div-one'] {
+        &::before {
+            content: "";
+            width: 100%;
+            height: 150px;
+            background-image: url("/images/bg-section-top-mobile-1.svg");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100px;
+            background-image: url("/images/bg-section-bottom-mobile-1.svg");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(100%);
+        }
+
+        @include mediaQuery(tablet) {
+            &::before {
+                background-image: url("/images/bg-section-top-desktop-1.svg");
+            }
+    
+            &::after {
+                background-image: url("/images/bg-section-bottom-desktop-1.svg");
+            }
+        }
+    }
+
+    div[class*='curved-div-two'] {        
+        &::before {
+            content: "";
+            width: 100%;
+            height: 150px;
+            background-image: url("/images/bg-section-top-mobile-2.svg");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100px;
+            background-image: url("/images/bg-section-bottom-mobile-2.svg");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(100%);
+        }
+
+        @include mediaQuery(tablet) {
+            &::before {
+                background-image: url("/images/bg-section-top-desktop-2.svg");
+            }
+    
+            &::after {
+                background-image: url("/images/bg-section-bottom-desktop-2.svg");
+            }
+        }
+    }
+
+    .banner {
+        padding: 4rem 2rem;
+        margin: 8rem 0 10rem;
+        text-align: center;
+
+        @include mediaQuery(desktop) {
+            padding: 6rem 3rem;
+        }
+    
+        h1 {
+            font-size: 1.5rem;
+
+            @include mediaQuery(tablet) {
+                font-size: 2rem;
+            }
+        }
+    
+        .primary-btn {
+            margin-top: 2.5rem;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.data {
+    padding: 2rem;
+
+    .grid-two-col {
+
+        .text {
+            text-align: center;
+
+            img {
+                width: Min(48px, 10%);
+            }
+
+            h1 {
+                font-size: 4rem;
+                position: relative;
+            }
+
+            p {
+                color: lightgray;
+            }
+        }
+    }
+}

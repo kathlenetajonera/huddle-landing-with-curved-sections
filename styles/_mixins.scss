@@ -1,0 +1,7 @@
+$mediaBreakpoints: ("mobile": "375px", "tablet": "768px", "desktop": "1024px");
+
+@mixin mediaQuery($size) {
+    @media (min-width: map-get($mediaBreakpoints, $size)) {
+        @content;
+    }
+}
